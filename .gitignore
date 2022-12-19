@@ -2,10 +2,7 @@
 .idea
 
 # IDEA scripts
-aqua
-clion
-datagrip
-idea
-phpstorm
-pycharm
-webstorm
+global
+
+# coding style tmp
+__coding_style_tmp
