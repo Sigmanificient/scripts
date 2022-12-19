@@ -15,7 +15,7 @@ git clone
 > :warning: Run this only once!
 
 ```sh
-make add_profile
+echo "export PATH=\"\$PATH:$HOME/Scripts/global\"" >> ~/.bash_profile
 ```
 
 3 - Install the scripts

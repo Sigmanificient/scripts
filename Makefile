@@ -1,24 +1,25 @@
 OUT = global
 SRC_DIR = src
 
-PROFILE := $(shell echo $$HOME)/.bash_profile
-
-add_profile:
-	@ cat bash_profile >> $(PROFILE)
-	$(info Created profile file)
+COPY = @ cp -r
 
 install:
-	@ ln -sf $(SRC_DIR)/coding_style.sh $(OUT)/cs
+	@ mkdir -p $(OUT)
+
+	$(COPY) $(SRC_DIR)/coding_style.sh $(OUT)/cs
+	chmod +x $(OUT)/cs
 	$(info Created coding style link)
 
-	@ ln -sf $(SRC_DIR)/weather.sh $(OUT)/weather
+	$(COPY) $(SRC_DIR)/weather.sh $(OUT)/weather
+	chmod +x $(OUT)/weather
 	$(info Created weather link)
 
-	@ ln -sf $(SRC_DIR)/clean_dl.sh $(OUT)/clean_dl
+	$(COPY) $(SRC_DIR)/clean_dl.sh $(OUT)/clean_dl
+	chmod +x $(OUT)/clean_dl
 	$(info Created clean_dl link)
 
 uninstall:
 	$(RM) -r $(OUT)/*
 	$(info Removed coding style link)
 
-.PHONY: add_profile install uninstall
+.PHONY: install uninstall
