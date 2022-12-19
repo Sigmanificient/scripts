@@ -1,6 +1,6 @@
 #!/bin/bash
 
-REPORTS_DIR=/home/sigmanificient/Scripts/__coding_style_tmp
+REPORTS_DIR=$$HOME/Scripts/__coding_style_tmp
 EXPORT_FILE="$REPORTS_DIR/coding-style-reports.log"
 
 cp -r . $REPORTS_DIR
