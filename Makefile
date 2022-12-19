@@ -9,10 +9,13 @@ add_profile:
 
 install:
 	@ ln -sf $(SRC_DIR)/coding_style.sh $(OUT)/cs
- 	$(info Created coding style link)
+	$(info Created coding style link)
 
 	@ ln -sf $(SRC_DIR)/weather.sh $(OUT)/weather
 	$(info Created weather link)
+
+	@ ln -sf $(SRC_DIR)/clean_dl.sh $(OUT)/clean_dl
+	$(info Created clean_dl link)
 
 uninstall:
 	$(RM) -r $(OUT)/*
